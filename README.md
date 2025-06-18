@@ -2,6 +2,8 @@
 
 This repository showcases hands-on SQL projects involving data cleaning and data analysis using real-world datasets. It demonstrates the use of SQL for transforming messy data into structured formats and deriving meaningful insights.
 
+---
+
 ## 📂 Projects
 
 ### 1. Data Cleaning of Nashville Housing Data
@@ -9,45 +11,49 @@ This repository showcases hands-on SQL projects involving data cleaning and data
 **Objective**: Clean and preprocess a housing dataset using SQL.
 
 **Techniques Used**:
-- Date format conversion
-- Address imputation using `JOIN`
-- Address parsing with `SUBSTRING`, `CHARINDEX`, and `PARSENAME`
-- Conditional updates (`CASE WHEN`)
-- Duplicate removal using `ROW_NUMBER() OVER`
-- Column deletion and schema optimization
+- Standardizing and converting date formats
+- Filling missing values via self joins
+- Splitting composite address fields into meaningful components
+- Standardizing categorical values (Y/N → Yes/No)
+- Identifying and removing duplicates
+- Dropping unnecessary columns
 
 **Key SQL Concepts**:
 - `CONVERT`, `ISNULL`, `SUBSTRING`, `CHARINDEX`, `PARSENAME`
-- `JOIN`, `ROW_NUMBER()`, `CASE`, `CTE`, `ALTER TABLE`
+- `JOIN`, `ROW_NUMBER()`, `CASE`, `CTE`, `ALTER TABLE`, `UPDATE`, `DROP COLUMN`
 
 **Sample Tasks**:
-- Fix `SaleDate` format to proper date
-- Split `PropertyAddress` and `OwnerAddress` into street, city, and state
-- Standardize 'Y'/'N' to 'Yes'/'No' in `SoldAsVacant` column
-- Remove duplicate records using CTE
-- Drop unnecessary columns like `TaxDistrict`, `OwnerAddress`
+- Convert `SaleDate` from text to date type
+- Fill null `PropertyAddress` values using parcel matches
+- Split `OwnerAddress` into street, city, and state
+- Clean up `SoldAsVacant` values
+- Remove duplicates using `ROW_NUMBER()` and a CTE
+- Drop columns like `TaxDistrict` and `SaleDate`
+
 
 ---
 
 ### 2. Data Analysis of COVID-19 Data
 
-**Objective**: Analyze the global COVID-19 impact using SQL queries on deaths and vaccination data.
+**Objective**: Explore COVID-19 trends using SQL, including case counts, fatalities, and vaccination progress.
 
-**Skills Demonstrated**:
-- Joins and Common Table Expressions (CTEs)
-- Aggregation and percentage calculations
-- Time-series trend analysis
-- View creation for reusable queries
+**Techniques Used**:
+- Filtering and aggregating time-series data
+- Calculating derived metrics (e.g., death %, infection rate)
+- Joining multiple datasets
+- Using CTEs and Window Functions
+- Creating views for reusable analysis
 
-**Key Analyses**:
-- Total cases vs. total deaths (fatality rates)
-- Highest infection and death rates by country and continent
-- Vaccination progress vs. population
-- Global death trends over time
+**Key SQL Concepts**:
+- `JOIN`, `GROUP BY`, `ORDER BY`, `WHERE`, `CAST`, `CONVERT`
+- Window functions: `SUM(...) OVER (PARTITION BY...)`
+- CTEs: `WITH ... AS (...)`
+- Creating views: `CREATE VIEW`
 
-**Highlights**:
-- Used window functions (`SUM(...) OVER`) to track vaccination accumulation
-- Created views for streamlined analysis
-- Focused on real-world scenarios (e.g., Germany’s fatality trend)
-
-
+**Sample Tasks**:
+- Analyze death rate by country and by population
+- Determine countries with the highest infection and fatality rates
+- Track cumulative vaccinations using rolling sums
+- Summarize death trends globally by date
+- Use CTE to simplify vaccination-percentage queries
+- Create a persistent view `PPV` for population vs. vaccination stats
