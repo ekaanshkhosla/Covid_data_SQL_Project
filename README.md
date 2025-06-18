@@ -27,8 +27,6 @@ This repository showcases hands-on SQL projects involving data cleaning and data
 - Remove duplicate records using CTE
 - Drop unnecessary columns like `TaxDistrict`, `OwnerAddress`
 
-[🔗 View Project Folder](./Data-Cleaning-of-Nashville-Housing-data-in-SQL)
-
 ---
 
 ### 2. Data Analysis of COVID-19 Data
@@ -51,7 +49,5 @@ This repository showcases hands-on SQL projects involving data cleaning and data
 - Used window functions (`SUM(...) OVER`) to track vaccination accumulation
 - Created views for streamlined analysis
 - Focused on real-world scenarios (e.g., Germany’s fatality trend)
-
-[🔗 View Project Folder](./Data-analysis-of-covid-data_in_SQL)
 
 
